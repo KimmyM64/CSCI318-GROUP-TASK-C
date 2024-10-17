@@ -41,7 +41,7 @@ public class BookingService {
 
         Booking booking = new Booking(request);
         
-        // Save the booking
+        // Save booking
         Booking savedBooking = bookingRepository.save(booking);
 
         // Process payment

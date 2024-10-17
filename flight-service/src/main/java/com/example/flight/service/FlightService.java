@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
-import org.springframework.messaging.Message;
 import com.example.flight.domain.Flight;
 import com.example.flight.repository.FlightRepository;
 import com.example.flight.config.KafkaConfig;  

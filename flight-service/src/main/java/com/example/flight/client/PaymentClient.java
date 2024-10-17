@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 public class PaymentClient {
     
     public void initiatePayment(String paymentDetails) {
-        // Have to implement payment logic here
         System.out.println("Payment processed with details: " + paymentDetails);
     }
 }

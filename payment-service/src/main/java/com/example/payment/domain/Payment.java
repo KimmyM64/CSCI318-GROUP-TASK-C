@@ -1,54 +1,41 @@
 package com.example.payment.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
 public class Payment {
-    // Jakarta ID and GeneratedValue packages to organise auto IDs
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String bank;
-    private String number;
-    private String expiry;
-    private String cvv;
+    private Double amount; 
+    private Long flightId;
+    private Long passengerId;
 
-    // Getter and Setter methods
+    // Getters and Setters
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
 
-    public String getBank() {
-        return bank;
-    }
-    public void setBank(String bank) {
-        this.bank = bank;
+    public Double getAmount() { 
+        return amount;
     }
 
-    public String getNumber() {
-        return number;
-    }
-    public void setNumber(String number) {
-        this.number = number;
+    public void setAmount(Double amount) { 
+        this.amount = amount;
     }
 
-    public String getExpiry() {
-        return expiry;
-    }
-    public void setExpiry(String expiry) {
-        this.expiry = expiry;
+    public Long getFlightId() {
+        return flightId;
     }
 
-    public String getCvv() {
-        return cvv;
+    public void setFlightId(Long flightId) {
+        this.flightId = flightId;
     }
-    public void setCvv(String cvv) {
-        this.cvv = cvv;
+
+    public Long getPassengerId() {
+        return passengerId;
+    }
+
+    public void setPassengerId(Long passengerId) {
+        this.passengerId = passengerId;
     }
 }

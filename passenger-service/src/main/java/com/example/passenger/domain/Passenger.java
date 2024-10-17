@@ -31,7 +31,7 @@ public class Passenger {
     }
 
     public String getLastName() {
-        return lastName; // Corrected getter
+        return lastName; 
     }
     public void setLastName(String lastName) { 
         this.lastName = lastName;

@@ -12,6 +12,6 @@ public class PaymentListener {
     public void handlePayment(Payment payment) {
         // Display message 
         System.out.println("Received payment: " + payment);
-        //need to process payment
+        // need to add logic to process payment
     }
 }

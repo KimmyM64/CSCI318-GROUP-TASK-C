@@ -2,7 +2,6 @@ package com.example.booking.events;
 
 import java.io.Serializable;
 
-
 public class BookingEvent implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -12,7 +11,6 @@ public class BookingEvent implements Serializable {
     private String destLocation; 
     private double bookingAmount; 
 
-    // Default constructor
     public BookingEvent() {
     }
 
@@ -20,7 +18,6 @@ public class BookingEvent implements Serializable {
     public String getPassengerId() {
         return passengerId;
     }
-
     public void setPassengerId(String passengerId) {
         this.passengerId = passengerId;
     }
@@ -28,7 +25,6 @@ public class BookingEvent implements Serializable {
     public String getFlightId() {
         return flightId;
     }
-
     public void setFlightId(String flightId) {
         this.flightId = flightId;
     }
@@ -36,7 +32,6 @@ public class BookingEvent implements Serializable {
     public String getDestLocation() {
         return destLocation;
     }
-
     public void setDestLocation(String destLocation) {
         this.destLocation = destLocation;
     }
@@ -44,11 +39,11 @@ public class BookingEvent implements Serializable {
     public double getBookingAmount() {
         return bookingAmount;
     }
-
     public void setBookingAmount(double bookingAmount) {
         this.bookingAmount = bookingAmount;
     }
 
+    //Change output tos tring
     @Override
     public String toString() {
         return "BookingEvent{" +

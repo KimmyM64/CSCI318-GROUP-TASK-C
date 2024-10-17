@@ -11,7 +11,7 @@ import com.example.booking.repository.BookingRepository;
 
 @Component
 public class PaymentServiceClient {
-
+    //Method to process payment
     public void processPayment(Long bookingId, PaymentDetails paymentDetails) {
         
         System.out.println("Processing payment for booking ID: " + bookingId);
