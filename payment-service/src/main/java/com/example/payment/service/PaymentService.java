@@ -7,12 +7,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.messaging.support.MessageBuilder;
 import com.example.payment.config.StreamConfig;
+import org.springframework.cloud.stream.annotation.StreamListener;
+import org.springframework.messaging.handler.annotation.Payload;
+
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class PaymentService {
+
+    @StreamListener("payment-input")
+    public void handlePaymentEvent(@Payload Payment payment) {
+        // Handle incoming payment events
+        System.out.println("Processing payment: " + payment);
+    }
 
     @Autowired
     private PaymentRepository paymentRepository;

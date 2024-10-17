@@ -3,10 +3,12 @@ package com.example.flight.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
-
+import org.springframework.messaging.Message;
 import com.example.flight.domain.Flight;
 import com.example.flight.repository.FlightRepository;
+import com.example.flight.config.KafkaConfig;  
 
 @Service
 public class FlightService {
@@ -14,10 +16,14 @@ public class FlightService {
     @Autowired
     private FlightRepository flightRepository;
 
+    @Autowired
+    private KafkaConfig.FlightProcessor flightProcessor; 
 
     // Create a Flight
     public Flight createFlight(Flight flight) {
-        return flightRepository.save(flight);
+        Flight createdFlight = flightRepository.save(flight);
+        publishFlightEvent(createdFlight, "created");
+        return createdFlight;
     }
 
     // Update a Flight
@@ -30,19 +36,21 @@ public class FlightService {
         existingFlight.setStart(flight.getStart());
         existingFlight.setDestination(flight.getDestination());
 
-        return flightRepository.save(existingFlight);
+        Flight updatedFlight = flightRepository.save(existingFlight);
+        publishFlightEvent(updatedFlight, "updated");
+        return updatedFlight;
     }
 
     // Get all Flights
     public List<Flight> getAllFlights() {
-        
         return flightRepository.findAll();
     }
 
-    public class FlightNotFoundException extends RuntimeException {
-    public FlightNotFoundException(String message) {
-        super(message);
-    }
+    // Publish flight events
+    private void publishFlightEvent(Flight flight, String eventType) {
+     String payload = String.format("{\"id\": %d, \"eventType\": \"%s\"}", flight.getId(), eventType);
+    
+    // Publish the event to the Kafka topic
+    flightProcessor.flightOutput().send(MessageBuilder.withPayload(payload).build());
 }
-
 }
