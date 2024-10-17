@@ -12,11 +12,12 @@
         <relativePath/> 
     </parent>
     
-    <groupId>com.example</groupId>
-    <artifactId>demo</artifactId>
+     <groupId>com.example</groupId>
+    <artifactId>passenger-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
-    <description>CSCI318 Task A</description>
+    <name>passenger</name>
+    <description>CSCI318 Task C</description>
+    <packaging>jar</packaging>
     
     <properties>
         <java.version>21</java.version>
@@ -54,6 +55,7 @@
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
+        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

@@ -1,13 +1,12 @@
 package com.example.flight.service;
 
-import com.example.flight.domain.Flight;
-import com.example.flight.repository.FlightRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.example.flight.client.PaymentClient; 
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.flight.domain.Flight;
+import com.example.flight.repository.FlightRepository;
 
 @Service
 public class FlightService {
@@ -15,8 +14,6 @@ public class FlightService {
     @Autowired
     private FlightRepository flightRepository;
 
-    @Autowired
-    private PaymentClient paymentClient; 
 
     // Create a Flight
     public Flight createFlight(Flight flight) {

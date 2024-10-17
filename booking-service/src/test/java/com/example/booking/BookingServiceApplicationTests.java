@@ -1,6 +1,6 @@
-package com.example.demo;
+package com.example.booking;
 
-import com.example.demo.service.BookingService;
+import com.example.booking.service.BookingService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -32,8 +32,8 @@ public class PassengerController {
     // Update a Passenger
     @PutMapping("/{id}")
     public ResponseEntity<Passenger> updatePassenger(@PathVariable Long id, @RequestBody Passenger passenger) {
-        Passenger newPassenger = passengerService.updatePassenger(id, passenger);
-        return new ResponseEntity<>(newPassenger, HttpStatus.OK);
+        Passenger updatedPassenger = passengerService.updatePassenger(id, passenger);
+        return new ResponseEntity<>(updatedPassenger, HttpStatus.OK);
     }
 
     // Get all Passengers

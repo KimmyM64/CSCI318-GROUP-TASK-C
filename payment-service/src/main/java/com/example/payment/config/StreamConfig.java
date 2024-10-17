@@ -1,18 +1,32 @@
 package com.example.payment.config;
 
-import org.springframework.cloud.stream.annotation.EnableBinding;
-import org.springframework.messaging.MessageChannel;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.support.MessageBuilder;
+import java.util.function.Supplier;
+import java.util.function.Consumer;
 
-@EnableBinding(PaymentProcessor.class)
+@Configuration
 public class StreamConfig {
-    public interface PaymentProcessor {
-        String OUTPUT = "paymentOutput";
-        String INPUT = "paymentInput";
 
-        @Output(OUTPUT)
-        MessageChannel paymentOutput();
+    // Send payment messages
+    @Bean
+    public Supplier<Message<String>> paymentOutput() {
+        return () -> {
+            // You can modify the payload as necessary
+            return MessageBuilder.withPayload("Payment message")
+                    .setHeader("type", "payment")
+                    .build();
+        };
+    }
 
-        @Input(INPUT)
-        SubscribableChannel paymentInput();
+    // Recieve new message 
+    @Bean
+    public Consumer<Message<String>> paymentInput() {
+        return message -> {
+            
+            System.out.println("Received payment: " + message.getPayload());
+        };
     }
 }

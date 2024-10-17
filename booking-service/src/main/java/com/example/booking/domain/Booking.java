@@ -34,17 +34,17 @@ public class Booking {
     }
 
      public Long getFlightId() {
-        return passengerID;
+        return passengerId;
     }
     public void setFlightID(Long flight) {
-        this.flightID = flightID;
+        this.flightId = flightId;
     }
 
      public Long getBookingAmount() {
-        return passengerID;
+        return passengerId;
     }
     public double setBookingAmount(double bookingAmount) {
-        this.flightID = flightID;
+        this.flightId = flightId;
     }
 
     public String getDestLocation() {

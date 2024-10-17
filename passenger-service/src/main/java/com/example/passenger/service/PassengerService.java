@@ -11,7 +11,6 @@ import com.example.passenger.repository.PassengerRepository;
 @Service
 public class PassengerService {
 
-    // AutoWired package to incorporate the Repository file
     @Autowired
     private PassengerRepository passengerRepository;
 
@@ -22,13 +21,14 @@ public class PassengerService {
 
     // Update a Passenger
     public Passenger updatePassenger(Long id, Passenger passenger) {
-        Passenger newPassenger = passengerRepository.findById(id).orElseThrow(() -> new RuntimeException("Passenger ID does not exist"));
+        Passenger existingPassenger = passengerRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Passenger ID does not exist"));
 
-        newPassenger.setFirstName(passenger.getFirstName());
-        newPassenger.setLastname(passenger.getLastName());
-        newPassenger.setEmail(passenger.getEmail());
+        existingPassenger.setFirstName(passenger.getFirstName());
+        existingPassenger.setLastName(passenger.getLastName()); 
+        existingPassenger.setEmail(passenger.getEmail());
 
-        return passengerRepository.save(newPassenger);
+        return passengerRepository.save(existingPassenger);
     }
 
     // Get all Passengers

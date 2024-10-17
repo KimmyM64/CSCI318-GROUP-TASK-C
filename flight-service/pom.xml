@@ -16,7 +16,7 @@
     <artifactId>flight-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>flight</name>
-    <description>CSCI318 Task A</description>
+    <description>CSCI318 Task Cs</description>
     <packaging>jar</packaging>
     
     <properties>

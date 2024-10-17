@@ -12,7 +12,7 @@ public class Passenger {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
-    private String lastName;
+    private String lastName; 
     private String email;
 
     // Getter and Setter methods
@@ -31,9 +31,9 @@ public class Passenger {
     }
 
     public String getLastName() {
-        return lastName;
+        return lastName; // Corrected getter
     }
-    public void setLastname(String lastName) {
+    public void setLastName(String lastName) { 
         this.lastName = lastName;
     }
 

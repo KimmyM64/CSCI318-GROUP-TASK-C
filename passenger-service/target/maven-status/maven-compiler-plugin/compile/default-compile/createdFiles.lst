@@ -1,0 +1,5 @@
+com/example/passenger/domain/Passenger.class
+com/example/passenger/repository/PassengerRepository.class
+com/example/passenger/PassengerServiceApplication.class
+com/example/passenger/service/PassengerService.class
+com/example/passenger/controller/PassengerController.class

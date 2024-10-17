@@ -1,10 +1,7 @@
 package com.example.booking.events;
 
 import java.io.Serializable;
-import com.example.booking.client.PaymentServiceClient;
-import com.example.booking.domain.Booking;
-import com.example.booking.events.BookingEvent;
-import com.example.booking.repository.BookingRepository;
+
 
 public class BookingEvent implements Serializable {
 
