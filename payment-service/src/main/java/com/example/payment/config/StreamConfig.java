@@ -14,7 +14,7 @@ public class StreamConfig {
     @Bean
     public Supplier<Message<String>> paymentOutput() {
         return () -> {
-            // You can modify the payload as necessary
+            // Need to modify
             return MessageBuilder.withPayload("Payment message")
                     .setHeader("type", "payment")
                     .build();
